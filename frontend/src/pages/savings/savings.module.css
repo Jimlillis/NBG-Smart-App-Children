@@ -1,0 +1,179 @@
+.savingsContainer {
+	display: flex;
+	height: 100vh;
+	background-color: #F0F7F4;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mainContent {
+	flex-grow: 1;
+	padding: 40px;
+	overflow-y: auto;
+}
+
+.header h1 {
+	color: #2A4B40;
+	font-size: 28px;
+	margin-bottom: 5px;
+}
+
+.header p {
+	color: #5C7C71;
+	font-size: 16px;
+	margin: 0;
+}
+
+.grid {
+	margin-top: 24px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+}
+
+@media (max-width: 900px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.formCard,
+.resultCard {
+	background-color: #FFFFFF;
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: 0 4px 15px rgba(42, 75, 64, 0.04);
+}
+
+.formCard h3,
+.resultCard h3 {
+	color: #2A4B40;
+	margin: 0 0 5px 0;
+	font-size: 20px;
+}
+
+.subtitle {
+	color: #5C7C71;
+	font-size: 14px;
+	margin-bottom: 18px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+}
+
+.formGroup label {
+	color: #2A4B40;
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+.formGroup input,
+.formGroup select {
+	padding: 12px 15px;
+	border: 1px solid #CDE4DB;
+	border-radius: 12px;
+	font-size: 15px;
+	color: #2A4B40;
+	background-color: #FAFDFB;
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+	border-color: #5A9C86;
+}
+
+.submitBtn {
+	background-color: #5A9C86;
+	color: white;
+	border: none;
+	border-radius: 12px;
+	padding: 14px;
+	font-size: 15px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.submitBtn:hover {
+	background-color: #3B7A65;
+}
+
+.submitBtn:disabled {
+	opacity: 0.75;
+	cursor: not-allowed;
+}
+
+.backLink {
+	color: #3B7A65;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.backLink:hover {
+	text-decoration: underline;
+}
+
+.errorBox {
+	background-color: #E6F2ED;
+	border: 1px solid #CDE4DB;
+	color: #2A4B40;
+	padding: 12px 14px;
+	border-radius: 12px;
+	font-size: 14px;
+}
+
+.muted {
+	color: #5C7C71;
+	margin-top: 14px;
+	font-size: 14px;
+}
+
+.suggestionBox {
+	margin-top: 14px;
+	background-color: #FAFDFB;
+	border: 1px solid #E6F2ED;
+	border-radius: 16px;
+	padding: 16px 18px;
+}
+
+.suggestionText {
+	margin: 0;
+	color: #2A4B40;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+.goalPreview {
+	margin-top: 18px;
+	border-top: 1px solid #E6F2ED;
+	padding-top: 14px;
+}
+
+.previewRow {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 0;
+}
+
+.previewLabel {
+	color: #5C7C71;
+	font-size: 13px;
+}
+
+.previewValue {
+	color: #2A4B40;
+	font-weight: 700;
+	font-size: 13px;
+}
+

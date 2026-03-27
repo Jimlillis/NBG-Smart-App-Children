@@ -4,6 +4,7 @@ import Dashboard from './pages/dashboard/dashboard';
 import LoginPage from './pages/loginPage/loginPage';
 // import Quiz from './pages/quiz/quiz';
 import ParentPage from './pages/parentPage/parentPage';
+import Savings from './pages/savings/savings';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
          <Route path="/dashboard" element={<Dashboard />} /> 
         {/* <Route path="/quiz" element={<Quiz />} /> */}
         <Route path="/parent-page" element={<ParentPage />} />
+        <Route path="/savings" element={<Savings />} />
 
         
         {/* Αν ο χρήστης βάλει λάθος URL, μπορείς να τον στείλεις κάπου αλλού */}
