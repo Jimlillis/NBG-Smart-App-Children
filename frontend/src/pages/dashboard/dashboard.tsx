@@ -48,7 +48,7 @@ const Dashboard = () => {
         </header>
 
         <div className={styles.balanceCardRow}>
-          <Card title="Διαθέσιμο Υπόλοιπο" balance={availableBalance} compact />
+          <Card title="Διαθέσιμο Υπόλοιπο" balance={availableBalance} className={styles.balanceCard} />
         </div>
 
         <div className={styles.topWidgets}>

@@ -45,6 +45,11 @@
   justify-content: center;
 }
 
+.balanceCard {
+  width: 100%;
+  max-width: 560px;
+}
+
 .topWidgets {
   margin-top: 16px;
   display: grid;

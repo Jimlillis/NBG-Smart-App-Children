@@ -23,6 +23,11 @@
   background-color: #9B66CC;
 }
 
+/* Χρώμα για Πόντους (Κίτρινο) */
+.pointsCard {
+  background-color: #E4A11B;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -84,6 +89,30 @@
   flex: none;
   width: 100%;
   max-width: 420px;
+}
+
+/* Ακόμα μικρότερο κουτάκι (π.χ. Πόντοι πάνω δεξιά) */
+.pointsSmall {
+  min-height: auto;
+  padding: 14px 16px;
+  border-radius: 18px;
+  flex: none;
+  width: 100%;
+  max-width: 320px;
+}
+
+.pointsSmall .header {
+  margin-bottom: 6px;
+}
+
+.pointsSmall .balance {
+  font-size: 26px;
+  margin-bottom: 0;
+}
+
+.pointsSmall .statBadge {
+  padding: 6px 10px;
+  font-size: 12px;
 }
 
 .compact .header {
