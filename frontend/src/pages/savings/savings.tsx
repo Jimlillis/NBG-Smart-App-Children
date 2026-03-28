@@ -45,7 +45,6 @@ const Savings = () => {
 	}, []);
 
 	const [formData, setFormData] = useState({
-		child_id: user.id,
 		item_name: '',
 		target_amount: '',
 		category: 'general' as Category,
@@ -78,7 +77,7 @@ const Savings = () => {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
-					child_id: formData.child_id,
+					child_id: user.id,
 					item_name: formData.item_name,
 					target_amount: targetAmountNumber,
 					category: formData.category,
@@ -120,22 +119,8 @@ const Savings = () => {
 				<div className={styles.grid}>
 					<section className={styles.formCard}>
 						<h3>Νέος Στόχος Αποταμίευσης</h3>
-						<p className={styles.subtitle}>
-							Tip: το <strong>child_id</strong> πρέπει να υπάρχει στη βάση (δοκίμασε το backend endpoint <code>/debug/children</code>).
-						</p>
 
 						<form onSubmit={handleSubmit} className={styles.form}>
-							<div className={styles.formGroup}>
-								<label>Child ID</label>
-								<input
-									name="child_id"
-									value={formData.child_id}
-									onChange={handleChange}
-									placeholder="UUID παιδιού"
-									required
-								/>
-							</div>
-
 							<div className={styles.formGroup}>
 								<label>Τι θέλεις να αγοράσεις;</label>
 								<input
