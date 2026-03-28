@@ -99,6 +99,20 @@ def list_lessons(
     return result.scalars().all()
 
 
+@router.get("/public", response_model=list[LessonListItem])
+def list_lessons_public(
+    age_group: AgeGroup | None = None,
+    db: Session = Depends(get_db),
+):
+    stmt = select(Lesson).where(Lesson.is_published == True)
+
+    if age_group is not None:
+        stmt = stmt.where(Lesson.age_group == age_group)
+
+    result = db.execute(stmt.order_by(Lesson.order_index))
+    return result.scalars().all()
+
+
 @router.get("/{lesson_id}")
 def get_lesson(
     lesson_id: int,

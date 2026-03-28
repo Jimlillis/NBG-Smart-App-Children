@@ -31,11 +31,19 @@ const Learning = () => {
   const [lessons, setLessons] = useState<LessonListItem[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const ageGroup = useMemo(() => {
+    // Απλός “κανόνας” για demo μέχρι να συνδεθεί πλήρως το auth/user profile.
+    if (user.age <= 10) return 'junior';
+    if (user.age <= 13) return 'intermediate';
+    return 'senior';
+  }, [user.age]);
+
   useEffect(() => {
     const fetchLessons = async () => {
       try {
-        // Σημείωση: Το backend ζητά auth. Αν δεν υπάρχει token, θα πέσει σε mock data.
-        const response = await fetch('/api/lessons');
+        // Τα lessons έρχονται από το backend router: backend/app/routers/lessons.py
+        // Χρησιμοποιούμε public endpoint για dev (χωρίς auth), μέσω Vite proxy.
+        const response = await fetch(`/api/lessons/public?age_group=${ageGroup}`);
         if (!response.ok) throw new Error('Αποτυχία φόρτωσης');
         const data = (await response.json()) as LessonListItem[];
         setLessons(data);
@@ -75,7 +83,7 @@ const Learning = () => {
     };
 
     fetchLessons();
-  }, []);
+  }, [ageGroup]);
 
   const quizzes = useMemo(() => {
     // Για τώρα, παρουσιάζουμε 1 quiz ανά μάθημα.
