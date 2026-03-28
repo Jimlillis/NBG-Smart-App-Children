@@ -50,6 +50,12 @@
   max-width: 560px;
 }
 
+.dailyChallengesRow {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+}
+
 .topWidgets {
   margin-top: 12px;
   display: grid;

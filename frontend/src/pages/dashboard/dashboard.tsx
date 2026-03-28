@@ -1,7 +1,9 @@
+import { useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Menu from '../../components/menu/menu';
 import Card from '../../components/card/card';
 import PointsCard from '../../components/pointsCard/pointsCard';
+import DailyChallenges from '../../components/dailyChallenges/dailyChallenges';
 import Goals from '../../components/goals/goals';  
 import Transactions from '../../components/transactions/transactions';
 import styles from './dashboard.module.css';
@@ -29,7 +31,10 @@ const Dashboard = () => {
   };
 
   const availableBalance = typeof user.available_balance === 'number' ? user.available_balance : 250;
-  const totalPoints = typeof user.total_points === 'number' ? user.total_points : 320;
+  const basePoints = typeof user.total_points === 'number' ? user.total_points : 320;
+
+  const [challengePointsEarned, setChallengePointsEarned] = useState(0);
+  const totalPoints = useMemo(() => basePoints + challengePointsEarned, [basePoints, challengePointsEarned]);
 
   return (
     <div className={styles.dashboardContainer}>
@@ -49,6 +54,10 @@ const Dashboard = () => {
 
         <div className={styles.balanceCardRow}>
           <Card title="Διαθέσιμο Υπόλοιπο" balance={availableBalance} className={styles.balanceCard} />
+        </div>
+
+        <div className={styles.dailyChallengesRow}>
+          <DailyChallenges onCompleted={(earnedPoints) => setChallengePointsEarned(earnedPoints)} />
         </div>
 
         <div className={styles.topWidgets}>
