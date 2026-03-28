@@ -11,6 +11,22 @@
   overflow-y: auto; /* Αν γεμίσει η σελίδα, να κάνει scroll μόνο το περιεχόμενο */
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.pointsCardWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .header h1 {
   color: #2A4B40;
   font-size: 28px;
@@ -43,6 +59,15 @@
 }
 
 @media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .pointsCardWrap {
+    width: 100%;
+    justify-content: center;
+  }
+
   .topWidgets {
     grid-template-columns: 1fr;
   }
