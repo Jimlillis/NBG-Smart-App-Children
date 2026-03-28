@@ -69,3 +69,22 @@
   margin-right: 5px;
   font-size: 16px;
 }
+
+/* Compact variant (π.χ. για μια μικρή κεντραρισμένη κάρτα στο Dashboard) */
+.compact {
+  min-height: auto;
+  padding: 16px 20px;
+  border-radius: 18px;
+  flex: none;
+  width: 100%;
+  max-width: 420px;
+}
+
+.compact .header {
+  margin-bottom: 8px;
+}
+
+.compact .balance {
+  font-size: 28px;
+  margin-bottom: 0;
+}

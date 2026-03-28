@@ -15,7 +15,7 @@ const Menu = ({ user }: MenuProps) => {
     <aside className={styles.sidebar}>
       {/* Λογότυπο / Όνομα Εφαρμογής */}
       <div className={styles.logoBox}>
-        <h2 className={styles.logoTitle}>PocketWise</h2>
+        <h2 className={styles.logoTitle}>WorthIt</h2>
         <p className={styles.logoSubtitle}>Μαθαίνω & Κερδίζω</p>
       </div>
 

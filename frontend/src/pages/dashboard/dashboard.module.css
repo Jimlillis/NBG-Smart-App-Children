@@ -23,11 +23,17 @@
   margin: 0;
 }
 
-.topWidgets {
+.balanceCardRow {
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.topWidgets {
+  margin-top: 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 16px;
   align-items: start;
 }
 
