@@ -98,7 +98,7 @@
   border-radius: 18px;
   flex: none;
   width: 100%;
-  max-width: 320px;
+  max-width: 260px;
 }
 
 .pointsSmall .header {
@@ -106,13 +106,13 @@
 }
 
 .pointsSmall .balance {
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 0;
 }
 
 .pointsSmall .statBadge {
   padding: 6px 10px;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .compact .header {

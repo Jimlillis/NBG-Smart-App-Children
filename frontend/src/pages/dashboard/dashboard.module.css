@@ -51,16 +51,11 @@
 }
 
 .topWidgets {
-  margin-top: 16px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 12px;
   align-items: start;
-}
-
-/* Κρατάει την κάρτα Transactions “πάνω δεξιά” */
-.topWidgets > :nth-child(2) {
-  justify-self: end;
 }
 
 @media (max-width: 900px) {
@@ -75,9 +70,5 @@
 
   .topWidgets {
     grid-template-columns: 1fr;
-  }
-
-  .topWidgets > :nth-child(2) {
-    justify-self: stretch;
   }
 }
