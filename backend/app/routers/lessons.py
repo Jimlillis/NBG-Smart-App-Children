@@ -64,13 +64,24 @@ async def generate_lesson(
         age_group=age_group,
         topic=topic,
         order_index=order_index,
+        difficulty_level=1,
+        estimated_duration_minutes=10,
+        video_url="",
+        thumbnail_url="",
         content=content,
+        xp_reward=20,
+        coin_reward=10,
+        is_published=True,
     )
+    
     db.add(lesson)
     db.flush()
 
     quiz = Quiz(lesson_id=lesson.id, questions=quiz_questions)
     db.add(quiz)
+
+    db.commit()
+    db.refresh(lesson)
 
     return {"message": "Lesson generated!", "lesson_id": lesson.id}
 
@@ -88,7 +99,7 @@ def list_lessons(
     return result.scalars().all()
 
 
-@router.get("/{lesson_id}", response_model=LessonOut)
+@router.get("/{lesson_id}")
 def get_lesson(
     lesson_id: int,
     current_user: User = Depends(get_current_user),
@@ -104,10 +115,18 @@ def get_lesson(
         db,
     )
 
-    return LessonOut(
-        **{c.name: getattr(lesson, c.name) for c in lesson.__table__.columns},
-        has_quiz=lesson.quiz is not None,
-    )
+    return {
+        "id": lesson.id,
+        "title": lesson.title,
+        "description": lesson.description,
+        "age_group": lesson.age_group,
+        "topic": lesson.topic,
+        "order_index": lesson.order_index,
+        "xp_reward": lesson.xp_reward,
+        "coin_reward": lesson.coin_reward,
+        "content": lesson.content,
+        "has_quiz": lesson.quiz is not None,
+    }
 
 
 @router.get("/{lesson_id}/quiz", response_model=QuizOut)
@@ -227,6 +246,8 @@ def submit_quiz(
         quiz_score=score,
         completed_at=datetime.now(timezone.utc) if passed else None,
     )
+    
+    db.commit()
 
     return QuizResult(
         score=score,

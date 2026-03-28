@@ -9,7 +9,7 @@ from app.models.models import AgeGroup
 
 genai.configure(api_key=settings.GEMINI_API_KEY)
 
-MODEL_NAME = "gemini-1.5-flash"
+MODEL_NAME = "gemini-flash-latest"
 
 
 def _age_group_text(age_group: AgeGroup) -> str:

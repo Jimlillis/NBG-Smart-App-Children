@@ -4,12 +4,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.db.database import Base, engine
-from app.routers import lessons
+from app.routers import lessons, auth
+from app.routers import saving_goals
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Create all tables on startup
     Base.metadata.create_all(bind=engine)
     yield
 
@@ -29,7 +29,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(auth.router)
 app.include_router(lessons.router)
+app.include_router(saving_goals.router)
 
 
 @app.get("/", tags=["Health"])
