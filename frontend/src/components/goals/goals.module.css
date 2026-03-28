@@ -1,7 +1,6 @@
 .goalsWidget {
   background-color: transparent;
   width: 100%;
-  max-width: 450px; /* Για να μην απλώνει υπερβολικά σε μεγάλες οθόνες */
 }
 
 .header {

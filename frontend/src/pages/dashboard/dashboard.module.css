@@ -22,11 +22,6 @@
   min-width: 0;
 }
 
-.pointsCardWrap {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .header h1 {
   color: #2A4B40;
   font-size: 28px;
@@ -39,28 +34,19 @@
   margin: 0;
 }
 
-.balanceCardRow {
+.topCards {
   margin-top: 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.balanceCard {
-  width: 100%;
-  max-width: 560px;
-}
-
-.dailyChallengesRow {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-}
-
-.topWidgets {
-  margin-top: 12px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.bottomWidgets {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   align-items: start;
 }
 
@@ -69,12 +55,8 @@
     flex-direction: column;
   }
 
-  .pointsCardWrap {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .topWidgets {
+  .topCards,
+  .bottomWidgets {
     grid-template-columns: 1fr;
   }
 }

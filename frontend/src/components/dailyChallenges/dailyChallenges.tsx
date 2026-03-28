@@ -17,11 +17,11 @@ const DailyChallenges = ({ pointsPerQuestion = 30, onCompleted }: DailyChallenge
     () => [
       {
         id: 'q1',
-        question: "What's the difference between a need and a want?",
+        question: 'Ποια είναι η διαφορά ανάμεσα σε μια ανάγκη και μια επιθυμία;',
         options: [
-          'A need is essential (π.χ. φαγητό), a want is something extra',
-          'A want is always cheaper than a need',
-          'There is no difference',
+          'Ανάγκη είναι κάτι απαραίτητο (π.χ. φαγητό), επιθυμία είναι κάτι “έξτρα”',
+          'Η επιθυμία είναι πάντα πιο φθηνή από την ανάγκη',
+          'Δεν υπάρχει διαφορά',
         ],
       },
       {
@@ -73,12 +73,12 @@ const DailyChallenges = ({ pointsPerQuestion = 30, onCompleted }: DailyChallenge
   };
 
   return (
-    <section className={styles.card} aria-label="Daily Challenges">
+    <section className={styles.card} aria-label="Καθημερινές Προκλήσεις">
       <div className={styles.header}>
         <div className={styles.titleRow}>
-          <h3 className={styles.title}>Daily Challenges</h3>
+          <h3 className={styles.title}>Καθημερινές Προκλήσεις</h3>
         </div>
-        <div className={styles.badge}>+{pointsPerQuestion} XP</div>
+        <div className={styles.badge}>+{pointsPerQuestion} πόντοι</div>
       </div>
 
       {completed ? (

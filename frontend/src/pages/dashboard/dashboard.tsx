@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Menu from '../../components/menu/menu';
 import Card from '../../components/card/card';
 import PointsCard from '../../components/pointsCard/pointsCard';
+import SavingsBalance from '../../components/savingsBalance/savingsBalance';
 import DailyChallenges from '../../components/dailyChallenges/dailyChallenges';
 import Goals from '../../components/goals/goals';  
 import Transactions from '../../components/transactions/transactions';
@@ -14,6 +15,7 @@ type DashboardUser = {
   age: number;
   parentName?: string;
   available_balance?: number;
+  savings_balance?: number;
   total_points?: number;
 };
 
@@ -27,10 +29,12 @@ const Dashboard = () => {
     age: 14,
     parentName: 'Γιώργος Π.',
     available_balance: 250,
+    savings_balance: 90,
     total_points: 320,
   };
 
   const availableBalance = typeof user.available_balance === 'number' ? user.available_balance : 250;
+  const savingsBalance = typeof user.savings_balance === 'number' ? user.savings_balance : 90;
   const basePoints = typeof user.total_points === 'number' ? user.total_points : 320;
 
   const [challengePointsEarned, setChallengePointsEarned] = useState(0);
@@ -46,24 +50,19 @@ const Dashboard = () => {
             <h1>Πίνακας Ελέγχου</h1>
             <p>Γεια σου, {user.fullname}! 👋</p>
           </div>
-
-          <div className={styles.pointsCardWrap}>
-            <PointsCard totalPoints={totalPoints} />
-          </div>
         </header>
 
-        <div className={styles.balanceCardRow}>
-          <Card title="Διαθέσιμο Υπόλοιπο" balance={availableBalance} className={styles.balanceCard} />
-        </div>
+        <section className={styles.topCards} aria-label="Σύνοψη">
+          <Card title="Διαθέσιμο Υπόλοιπο" balance={availableBalance} />
+          <SavingsBalance balance={savingsBalance} />
+          <PointsCard totalPoints={totalPoints} />
+        </section>
 
-        <div className={styles.dailyChallengesRow}>
-          <DailyChallenges onCompleted={(earnedPoints) => setChallengePointsEarned(earnedPoints)} />
-        </div>
-
-        <div className={styles.topWidgets}>
+        <section className={styles.bottomWidgets} aria-label="Επισκόπηση">
           <Goals />
           <Transactions />
-        </div>
+          <DailyChallenges onCompleted={(earnedPoints) => setChallengePointsEarned(earnedPoints)} />
+        </section>
       </main>
     </div>
   );

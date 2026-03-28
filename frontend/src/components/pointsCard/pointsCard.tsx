@@ -6,7 +6,7 @@ interface PointsCardProps {
 
 const PointsCard = ({ totalPoints }: PointsCardProps) => {
   return (
-    <section className={`${styles.card} ${styles.pointsCard} ${styles.pointsSmall}`} aria-label="Πόντοι">
+    <section className={`${styles.card} ${styles.pointsCard}`} aria-label="Πόντοι">
       <div className={styles.header}>
         <span className={styles.title}>Πόντοι</span>
         <span className={styles.emojiIcon} aria-hidden="true">

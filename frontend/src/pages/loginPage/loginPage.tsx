@@ -28,7 +28,7 @@ const LoginPage = () => {
   return (
     <div className={styles.loginContainer}>
       <div className={styles.loginBox}>
-        <h1 className={styles.title}>Καλώς ήρθες στο PocketWise!</h1>
+        <h1 className={styles.title}>Καλώς ήρθες στο WorthIt!</h1>
         <p className={styles.subtitle}>Επίλεξε ποιος συνδέεται για να συνεχίσεις:</p>
 
         <div className={styles.cardsWrapper}>
