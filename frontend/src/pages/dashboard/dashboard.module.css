@@ -22,3 +22,26 @@
   font-size: 16px;
   margin: 0;
 }
+
+.topWidgets {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Κρατάει την κάρτα Transactions “πάνω δεξιά” */
+.topWidgets > :nth-child(2) {
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .topWidgets {
+    grid-template-columns: 1fr;
+  }
+
+  .topWidgets > :nth-child(2) {
+    justify-self: stretch;
+  }
+}

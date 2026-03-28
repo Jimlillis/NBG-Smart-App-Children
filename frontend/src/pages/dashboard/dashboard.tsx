@@ -24,9 +24,11 @@ const Dashboard = () => {
           <h1>Πίνακας Ελέγχου</h1>
           <p>Γεια σου, {user.fullname}! 👋</p>
         </header>
-        
-        <Goals />
-        <Transactions />
+
+        <div className={styles.topWidgets}>
+          <Goals />
+          <Transactions />
+        </div>
       </main>
     </div>
   );
