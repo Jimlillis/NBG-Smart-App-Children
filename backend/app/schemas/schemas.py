@@ -134,3 +134,17 @@ class QuizResult(BaseModel):
     coins_earned: int
     passed: bool
     feedback: list[QuizFeedbackItem]
+
+
+# ──────────────────────────────────────────
+# Transactions Schemas
+# ──────────────────────────────────────────
+
+class TransactionOut(BaseModel):
+    id: str
+    child_id: str
+    title: str
+    amount: float
+    category: str
+    type: str
+    inserted_at: str

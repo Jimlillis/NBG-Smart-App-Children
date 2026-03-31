@@ -18,6 +18,12 @@
   gap: 16px;
 }
 
+.headerRight {
+  margin-left: auto;
+  max-width: 280px;
+  width: 100%;
+}
+
 .headerText {
   min-width: 0;
 }
@@ -37,7 +43,7 @@
 .topCards {
   margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.35fr 1fr;
   gap: 16px;
   align-items: stretch;
 }

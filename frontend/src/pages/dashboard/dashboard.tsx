@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Menu from '../../components/menu/menu';
 import Card from '../../components/card/card';
 import PointsCard from '../../components/pointsCard/pointsCard';
-import SavingsBalance from '../../components/savingsBalance/savingsBalance';
+import JuniorCard from '../../components/juniorCard/juniorCard';
 import DailyChallenges from '../../components/dailyChallenges/dailyChallenges';
 import Goals from '../../components/goals/goals';  
 import Transactions from '../../components/transactions/transactions';
@@ -35,8 +35,8 @@ const Dashboard = () => {
 
   const availableBalance = typeof user.available_balance === 'number' ? user.available_balance : 250;
   const savingsBalance = typeof user.savings_balance === 'number' ? user.savings_balance : 90;
-  const basePoints = typeof user.total_points === 'number' ? user.total_points : 320;
 
+  const basePoints = typeof user.total_points === 'number' ? user.total_points : 320;
   const [challengePointsEarned, setChallengePointsEarned] = useState(0);
   const totalPoints = useMemo(() => basePoints + challengePointsEarned, [basePoints, challengePointsEarned]);
 
@@ -50,12 +50,27 @@ const Dashboard = () => {
             <h1>Πίνακας Ελέγχου</h1>
             <p>Γεια σου, {user.fullname}! 👋</p>
           </div>
+
+          <div className={styles.headerRight}>
+            <PointsCard totalPoints={totalPoints} />
+          </div>
         </header>
 
         <section className={styles.topCards} aria-label="Σύνοψη">
-          <Card title="Διαθέσιμο Υπόλοιπο" balance={availableBalance} />
-          <SavingsBalance balance={savingsBalance} />
-          <PointsCard totalPoints={totalPoints} />
+          <Card
+            title="Διαθέσιμο Υπόλοιπο"
+            balance={availableBalance}
+            secondaryTitle="Αποταμιεύσεις"
+            secondaryBalance={savingsBalance}
+            showEye
+            chips={{
+              incomeLabel: 'εισροή',
+              incomeAmount: 25,
+              expenseLabel: 'έξοδα',
+              expenseAmount: 8.5,
+            }}
+          />
+          <JuniorCard holderName={user.fullname} />
         </section>
 
         <section className={styles.bottomWidgets} aria-label="Επισκόπηση">

@@ -6,7 +6,10 @@ interface PointsCardProps {
 
 const PointsCard = ({ totalPoints }: PointsCardProps) => {
   return (
-    <section className={`${styles.card} ${styles.pointsCard}`} aria-label="Πόντοι">
+    <section
+      className={`${styles.card} ${styles.pointsCard} ${styles.pointsSmall} ${styles.pointsFunky}`}
+      aria-label="Πόντοι"
+    >
       <div className={styles.header}>
         <span className={styles.title}>Πόντοι</span>
         <span className={styles.emojiIcon} aria-hidden="true">
@@ -16,11 +19,9 @@ const PointsCard = ({ totalPoints }: PointsCardProps) => {
 
       <div className={styles.balance}>{totalPoints}</div>
 
-      <div style={{ marginTop: '10px' }}>
-        <div className={styles.statsRow}>
-          <div className={styles.statBadge}>
-            <span>Στόχος: 500 πόντοι → €2,50 έκπτωση από Pizza Fun</span>
-          </div>
+      <div className={styles.pointsNote}>
+        <div className={styles.statBadge}>
+          Στόχος: 500 πόντοι → δωρεάν κουπόνι από Everest
         </div>
       </div>
     </section>

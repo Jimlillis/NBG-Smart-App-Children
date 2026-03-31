@@ -13,19 +13,13 @@
   flex: 1; /* Για να πιάνουν τον ίδιο χώρο αν μπουν δίπλα-δίπλα */
 }
 
-/* Χρώμα για το Διαθέσιμο Υπόλοιπο (Teal/Mint) */
-.mainCard {
-  background-color: #5A9C86; 
-}
-
-/* Χρώμα για την Αποταμίευση (Απαλό Μωβ) */
-.savingsCard {
-  background-color: #9B66CC;
-}
-
 /* Χρώμα για Πόντους (Κίτρινο) */
 .pointsCard {
   background-color: #E4A11B;
+}
+
+.pointsFunky {
+  background: linear-gradient(135deg, #FFB020 0%, #FF7A59 55%, #FF4D6D 100%);
 }
 
 .header {
@@ -60,6 +54,25 @@
   letter-spacing: -1px;
 }
 
+.secondaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: -6px;
+  margin-bottom: 16px;
+  opacity: 0.95;
+}
+
+.secondaryLabel {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.secondaryAmount {
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .statsRow {
   display: flex;
   gap: 15px;
@@ -79,6 +92,243 @@
 .statIcon {
   margin-right: 5px;
   font-size: 16px;
+}
+
+/* Screenshot-like gradients */
+.mainCard {
+  background: linear-gradient(135deg, #2EC4A6 0%, #1FAF93 55%, #168B7C 100%);
+}
+
+.savingsCard {
+  background: linear-gradient(135deg, #8E6CE6 0%, #7C56D8 55%, #6B45C9 100%);
+}
+
+/* Purple "PocketWise Junior Card" */
+.juniorCard {
+  background: linear-gradient(135deg, #8E6CE6 0%, #7C56D8 55%, #6B45C9 100%);
+  min-height: 180px;
+}
+
+.flipCard {
+  cursor: pointer;
+}
+
+.flipInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  transform-style: preserve-3d;
+  transition: transform 520ms ease;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.flipFace {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+}
+
+.flipFront {
+  transform: rotateY(0deg);
+}
+
+.flipBack {
+  transform: rotateY(180deg);
+}
+
+.backStripe {
+  height: 42px;
+  width: 100%;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.signatureRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.signatureBox {
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.signatureLabel {
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  opacity: 0.78;
+  margin-bottom: 8px;
+}
+
+.signatureLine {
+  height: 18px;
+  width: 100%;
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.72) 0px,
+    rgba(255, 255, 255, 0.72) 12px,
+    rgba(255, 255, 255, 0.28) 12px,
+    rgba(255, 255, 255, 0.28) 22px
+  );
+}
+
+.cvvBox {
+  min-width: 76px;
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: right;
+}
+
+.cvvLabel {
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  opacity: 0.78;
+  margin-bottom: 8px;
+}
+
+.cvvValue {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.backInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+  margin-bottom: auto;
+}
+
+.backInfoItem {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 10px 12px;
+  overflow: hidden;
+}
+
+.backFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.backSmallText {
+  font-size: 11px;
+  opacity: 0.78;
+  line-height: 1.1;
+}
+
+.juniorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.juniorBrand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.juniorBrandName {
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.juniorBrandSub {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.contactless {
+  opacity: 0.9;
+}
+
+.juniorNumberRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.95;
+}
+
+.juniorDots {
+  font-weight: 700;
+}
+
+.juniorLast4 {
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.juniorFooter {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 14px;
+  align-items: end;
+  margin-top: auto;
+}
+
+.juniorMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.juniorLabel {
+  font-size: 11px;
+  opacity: 0.75;
+  letter-spacing: 0.6px;
+}
+
+.juniorValue {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.mastercard {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+}
+
+.mcCircle1,
+.mcCircle2 {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.mcCircle1 {
+  background: rgba(255, 140, 0, 0.9);
+}
+
+.mcCircle2 {
+  background: rgba(255, 60, 60, 0.85);
+  margin-left: -10px;
 }
 
 /* Compact variant (π.χ. για μια μικρή κεντραρισμένη κάρτα στο Dashboard) */
@@ -108,6 +358,15 @@
 .pointsSmall .balance {
   font-size: 24px;
   margin-bottom: 0;
+}
+
+.pointsNote {
+  margin-top: 10px;
+}
+
+.pointsSmall .pointsNote .statBadge {
+  padding: 7px 10px;
+  font-size: 11px;
 }
 
 .pointsSmall .statBadge {
