@@ -11,6 +11,7 @@ import styles from './dashboard.module.css';
 
 
 type DashboardUser = {
+  id?: string;
   fullname: string;
   age: number;
   parentName?: string;
@@ -74,7 +75,7 @@ const Dashboard = () => {
         </section>
 
         <section className={styles.bottomWidgets} aria-label="Επισκόπηση">
-          <Goals />
+          <Goals user={user} />
           <Transactions />
           <DailyChallenges onCompleted={(earnedPoints) => setChallengePointsEarned(earnedPoints)} />
         </section>

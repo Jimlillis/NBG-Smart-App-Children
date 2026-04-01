@@ -5,9 +5,10 @@ import styles from './loginPage.module.css';
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const fallbackChildId = import.meta.env.VITE_CHILD_ID || 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
 
   const mockChildUser = {
-    id: 'child-uuid-1234',
+    id: fallbackChildId,
     fullname: 'Μαρία Κ.',
     email: 'maria@email.com',
     age: 14,

@@ -4,6 +4,7 @@ import styles from './menu.module.css';
 
 interface MenuProps {
   user: {
+    id?: string;
     fullname: string;
     age: number;
     parentName?: string;
@@ -21,9 +22,9 @@ const Menu = ({ user }: MenuProps) => {
 
       {/* Σύνδεσμοι Πλοήγησης */}
       <nav className={styles.navLinks}>
-        <Link to="/dashboard" className={styles.link}><FaHome className={styles.icon} /> Αρχική</Link>
+        <Link to="/dashboard" state={{ user }} className={styles.link}><FaHome className={styles.icon} /> Αρχική</Link>
         <Link to="/card" className={styles.link}><FaCreditCard className={styles.icon} /> Κάρτα</Link>
-        <Link to="/savings" className={styles.link}><FaPiggyBank className={styles.icon} /> Αποταμίευση</Link>
+        <Link to="/savings" state={{ user }} className={styles.link}><FaPiggyBank className={styles.icon} /> Αποταμίευση</Link>
         <Link to="/learning" className={styles.link}><FaBookOpen className={styles.icon} /> Μάθηση</Link>
         <Link to="/rewards" className={styles.link}><FaTrophy className={styles.icon} /> Βραβεία</Link>
       </nav>

@@ -31,9 +31,10 @@ interface CreateGoalResponse {
 
 const Savings = () => {
 	const location = useLocation();
+	const fallbackChildId = import.meta.env.VITE_CHILD_ID || 'f47ac10b-58cc-4372-a567-0e02b2c3d479';
 
 	const user: ChildUser = location.state?.user || {
-		id: 'child-uuid-1234',
+		id: fallbackChildId,
 		fullname: 'Μαρία Κ.',
 		age: 14,
 		parentName: 'Γιώργος Π.',
@@ -41,7 +42,7 @@ const Savings = () => {
 	};
 
 	const apiBaseUrl = useMemo(() => {
-		return import.meta.env.VITE_BACKEND_URL || 'http://127.0.0.1:8000';
+		return import.meta.env.VITE_AI_AGENT_URL || 'http://127.0.0.1:8001';
 	}, []);
 
 	const [formData, setFormData] = useState({
@@ -64,6 +65,14 @@ const Savings = () => {
 		setError(null);
 		setSuggestion(null);
 		setCreatedGoal(null);
+
+		const isValidUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
+			user.id
+		);
+		if (!isValidUuid) {
+			setError('Δεν βρέθηκε έγκυρο child ID. Κάνε ξανά login.');
+			return;
+		}
 
 		const targetAmountNumber = Number(formData.target_amount);
 		if (!Number.isFinite(targetAmountNumber) || targetAmountNumber <= 0) {

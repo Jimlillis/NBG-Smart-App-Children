@@ -13,7 +13,16 @@ interface Goal {
   inserted_at: string;
 }
 
-const Goals = () => {
+interface GoalsProps {
+  user?: {
+    id?: string;
+    fullname?: string;
+    age?: number;
+    parentName?: string;
+  };
+}
+
+const Goals = ({ user }: GoalsProps) => {
   // 2. Ενημερώνουμε τα Mock δεδομένα με τα σωστά κλειδιά (keys) της βάσης
   const mockGoals: Goal[] = [
     { 
@@ -61,7 +70,7 @@ const Goals = () => {
     <div className={styles.goalsWidget}>
       <div className={styles.header}>
         <h3 className={styles.title}>Στόχοι Αποταμίευσης 🎯</h3>
-        <Link to="/savings" className={styles.newBtn}>+ Νέος</Link>
+        <Link to="/savings" state={{ user }} className={styles.newBtn}>+ Νέος</Link>
       </div>
 
       <div className={styles.goalsList}>
