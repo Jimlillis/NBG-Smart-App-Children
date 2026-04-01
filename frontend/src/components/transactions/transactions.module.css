@@ -101,3 +101,33 @@
   font-size: 16px;
   font-weight: 600;
 } 
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .transactionRow {
+    padding: 12px;
+  }
+
+  .iconBox {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .txTitle {
+    font-size: 14px;
+  }
+
+  .txDate {
+    font-size: 12px;
+  }
+
+  .amountIncome,
+  .amountExpense {
+    font-size: 14px;
+  }
+}

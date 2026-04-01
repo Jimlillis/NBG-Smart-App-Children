@@ -1,6 +1,6 @@
 .sidebar {
   width: 260px;
-  height: 100vh;
+  min-height: 100dvh;
   background-color: #E6F2ED; /* Λίγο πιο σκούρο παστέλ από το γενικό background */
   padding: 30px 20px;
   display: flex;
@@ -85,4 +85,84 @@
   color: #5C7C71;
   font-size: 12px;
   margin-top: 3px;
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 220px;
+    padding: 22px 14px;
+  }
+
+  .logoTitle {
+    font-size: 22px;
+  }
+
+  .link {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 12px;
+    box-shadow: none;
+    border-bottom: 1px solid #CDE4DB;
+    gap: 10px;
+  }
+
+  .logoBox {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  .logoSubtitle {
+    display: none;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    flex-grow: 0;
+    scrollbar-width: thin;
+    padding-bottom: 2px;
+  }
+
+  .link {
+    white-space: nowrap;
+    padding: 10px 12px;
+    border: 1px solid #CDE4DB;
+    background-color: #FAFDFB;
+    font-size: 13px;
+  }
+
+  .link:hover {
+    transform: none;
+  }
+
+  .icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  .profileBox {
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .profileAvatar {
+    font-size: 30px;
+    margin-right: 8px;
+  }
+
+  .childName {
+    font-size: 13px;
+  }
+
+  .parentName {
+    font-size: 11px;
+  }
 }

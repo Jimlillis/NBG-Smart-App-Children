@@ -83,3 +83,35 @@
   color: #5C7C71;
   font-size: 14px;
 }
+
+@media (max-width: 768px) {
+  .loginContainer {
+    padding: 16px;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .loginBox {
+    padding: 28px 18px;
+    border-radius: 18px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  .cardsWrapper {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .roleCard {
+    width: 100%;
+    padding: 20px 14px;
+  }
+}

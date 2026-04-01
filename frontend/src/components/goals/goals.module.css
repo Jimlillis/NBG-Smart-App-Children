@@ -102,3 +102,31 @@
   border-radius: 10px;
   transition: width 0.8s ease-out; /* Ωραίο animation όταν φορτώνει */
 }
+
+@media (max-width: 600px) {
+  .header {
+    margin-bottom: 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .goalCard {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .goalInfo {
+    align-items: flex-start;
+  }
+
+  .goalTitle {
+    font-size: 14px;
+  }
+
+  .amounts,
+  .percentage {
+    font-size: 12px;
+  }
+}

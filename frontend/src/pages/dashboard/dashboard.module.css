@@ -1,6 +1,6 @@
 .dashboardContainer {
   display: flex;
-  height: 100vh;
+  min-height: 100dvh;
   background-color: #F0F7F4; /* Το βασικό μας παστέλ background */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -57,12 +57,41 @@
 }
 
 @media (max-width: 900px) {
+  .dashboardContainer {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    padding: 20px 16px;
+    overflow-y: visible;
+  }
+
   .header {
     flex-direction: column;
+    align-items: stretch;
+  }
+
+  .headerRight {
+    max-width: 100%;
   }
 
   .topCards,
   .bottomWidgets {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 16px 12px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .header p {
+    font-size: 14px;
   }
 }

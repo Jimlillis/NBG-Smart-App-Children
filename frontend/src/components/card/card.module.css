@@ -260,6 +260,38 @@
   opacity: 0.85;
 }
 
+@media (max-width: 900px) {
+  .card {
+    min-height: 160px;
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .balance {
+    font-size: 34px;
+    margin-bottom: 14px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .secondaryLabel,
+  .secondaryAmount {
+    font-size: 13px;
+  }
+
+  .statsRow {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .statBadge {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+}
+
 .contactless {
   opacity: 0.9;
 }
